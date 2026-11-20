@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+- A key printed more than once (two `warn:` lines, e.g. `--insecure` with `set-power`) now prints as one `key[N]:` list, so strict TOON decoders accept it. The strict CI check covers `--insecure`.
+
 ## 0.1.1
 
 Fixes from an independent source review against the AXI principles.

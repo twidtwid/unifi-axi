@@ -78,8 +78,21 @@ class Doc:
         for block in self.blocks:
             if block[0] == "group":
                 groups.setdefault(block[1], []).append(block[2])
+        repeated_kv: dict[str, list[str]] = {}
+        for block in self.blocks:
+            if block[0] == "kv":
+                repeated_kv.setdefault(block[1], []).append(block[2])
+        repeated_kv = {k: v for k, v in repeated_kv.items() if len(v) > 1}
         done: set[str] = set()
         for block in self.blocks:
+            if block[0] == "kv" and block[1] in repeated_kv:
+                # a key printed twice (two warn: lines) becomes one list; TOON forbids duplicate keys
+                if block[1] not in done:
+                    done.add(block[1])
+                    values = repeated_kv[block[1]]
+                    lines.append(f"{block[1]}[{len(values)}]:")
+                    lines.extend(f"  - {toon_scalar(v)}" for v in values)
+                continue
             if block[0] == "group":
                 # every group of one name is one TOON list of objects, at its first position
                 name = block[1]

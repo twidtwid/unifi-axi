@@ -378,6 +378,15 @@ class ReviewFixTests(unittest.TestCase):
             doc.group("aps", sub)
         self.assertEqual(doc.toon(), "help[1]:\n  - unifi-axi aps\naps[2]:\n  - verify: AP Den\n  - verify: AP Office\n")
 
+    def test_repeated_key_becomes_one_list(self):
+        from unifi_axi.toon import Doc
+        doc = Doc()
+        doc.kv("warn", "tls verification off")
+        doc.kv("help", "x")
+        doc.kv("warn", "live call: wait")
+        self.assertEqual(doc.toon(), 'warn[2]:\n  - tls verification off\n  - "live call: wait"\nhelp: x\n')
+        self.assertEqual(doc.obj()["warn"], ["tls verification off", "live call: wait"])
+
     def test_unknown_fields_name_is_reported(self):
         code, out = run(["aps", "--fields", "nosuch"])
         self.assertEqual(code, 0, out)
@@ -393,7 +402,8 @@ class ReviewFixTests(unittest.TestCase):
     def test_every_command_output_decodes_with_the_official_toon_cli(self):
         cases = [[], ["aps"], ["clients"], ["drops", "--since", "24h"], ["kickout"], ["verify", "--all"],
                  ["client", "Alex iPhone", "--since", "2026-11-19 09:50", "--until", "2026-11-19 10:12"],
-                 ["set-power", "AP Office", "5", "19"], ["aps", "--bogus"]]
+                 ["set-power", "AP Office", "5", "19"], ["aps", "--bogus"],
+                 ["set-power", "AP Office", "5", "19", "--insecure"], ["aps", "--fields", "nosuch", "--insecure"]]
         for argv in cases:
             with self.subTest(argv=argv):
                 _, out = run(argv, raw_output=True)

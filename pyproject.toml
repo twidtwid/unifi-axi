@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "unifi-axi"
-version = "0.1.1"
+version = "0.1.2"
 description = "Agent-ergonomic (AXI) Wi-Fi client and AP diagnosis for UniFi Network: client timelines, drops, on-device verify, firmware kickouts, guarded tx-power changes."
 readme = "README.md"
 license = "MIT"

@@ -1,0 +1,124 @@
+EPOCH 1795143930
+---IWCONFIG
+wifi2ap5  IEEE 802.11bea  ESSID:"element-example"  
+          Mode:Master  Frequency:6.235 GHz  Access Point: 02:00:00:00:00:12   
+          Bit Rate:1.4412 Gb/s   Tx-Power=18 dBm   
+          RTS thr:off   Fragment thr:off
+          Encryption key:REDACTED   Security mode:restricted
+          Power Management:off
+          Link Quality=0/94  Signal level=-96 dBm  Noise level=-96 dBm (BDF averaged NF value in dBm)
+          Rx invalid nwid:1538  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+wifi0ap1  IEEE 802.11beg  ESSID:"element-example"  
+          Mode:Master  Frequency:2.437 GHz  Access Point: 02:00:00:00:00:13   
+          Bit Rate:344.2 Mb/s   Tx-Power=18 dBm   
+          RTS thr:off   Fragment thr:off
+          Encryption key:REDACTED   Security mode:restricted
+          Power Management:off
+          Link Quality=0/94  Signal level=-96 dBm  Noise level=-97 dBm (BDF averaged NF value in dBm)
+          Rx invalid nwid:236662  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+wifi0ap0  IEEE 802.11beg  ESSID:"ExampleLAN"  
+          Mode:Master  Frequency:2.437 GHz  Access Point: 02:00:00:00:00:0E   
+          Bit Rate:344.2 Mb/s   Tx-Power=18 dBm   
+          RTS thr:off   Fragment thr:off
+          Encryption key:REDACTED   Security mode:restricted
+          Power Management:off
+          Link Quality=0/94  Signal level=-96 dBm  Noise level=-97 dBm (BDF averaged NF value in dBm)
+          Rx invalid nwid:212544  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+mld-wifi0  IEEE 802.11  Mode:Master  
+          RTS thr:off   Fragment thr:off
+          Power Management:off
+          
+wifi0ap6  IEEE 802.11beg  ESSID:"ExampleIoT"  
+          Mode:Master  Frequency:2.437 GHz  Access Point: 02:00:00:00:00:0D   
+          Bit Rate:344.2 Mb/s   Tx-Power=18 dBm   
+          RTS thr:off   Fragment thr:off
+          Encryption key:REDACTED   Security mode:restricted
+          Power Management:off
+          Link Quality=0/94  Signal level=-96 dBm  Noise level=-97 dBm (BDF averaged NF value in dBm)
+          Rx invalid nwid:218528  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+wifi1ap2  IEEE 802.11bea  ESSID:"ExampleLAN"  
+          Mode:Master  Frequency:5.745 GHz  Access Point: 02:00:00:00:00:02   
+          Bit Rate:688.2 Mb/s   Tx-Power=20 dBm   
+          RTS thr:off   Fragment thr:off
+          Encryption key:REDACTED   Security mode:restricted
+          Power Management:off
+          Link Quality=0/94  Signal level=-96 dBm  Noise level=-96 dBm (BDF averaged NF value in dBm)
+          Rx invalid nwid:607  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+pd99      IEEE 802.11b  ESSID:""  
+          Mode:Monitor  Frequency:2.437 GHz  Access Point: Not-Associated   
+          Bit Rate:0 kb/s   Tx-Power=18 dBm   
+          RTS thr:off   Fragment thr:off
+          Encryption key:REDACTED
+          Power Management:off
+          Link Quality=0/94  Signal level=-96 dBm  Noise level=-97 dBm (BDF averaged NF value in dBm)
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+wifi1ap3  IEEE 802.11bea  ESSID:"element-example"  
+          Mode:Master  Frequency:5.745 GHz  Access Point: 02:00:00:00:00:14   
+          Bit Rate:688.2 Mb/s   Tx-Power=20 dBm   
+          RTS thr:off   Fragment thr:off
+          Encryption key:REDACTED   Security mode:restricted
+          Power Management:off
+          Link Quality=0/94  Signal level=-96 dBm  Noise level=-96 dBm (BDF averaged NF value in dBm)
+          Rx invalid nwid:13244  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+---HOSTAPD wifi0ap0
+bssid=02:00:00:00:00:0e
+ssid=ExampleLAN
+wps_state=disabled
+wpa=2
+key_mgmt=FT-SAE SAE
+group_cipher=CCMP
+rsn_pairwise_cipher=CCMP
+---HOSTAPD wifi0ap1
+bssid=02:00:00:00:00:13
+ssid=element-example
+wps_state=disabled
+wpa=2
+key_mgmt=WPA-PSK
+group_cipher=CCMP
+rsn_pairwise_cipher=CCMP
+---HOSTAPD wifi0ap6
+bssid=02:00:00:00:00:0d
+ssid=ExampleIoT
+wps_state=disabled
+wpa=2
+key_mgmt=WPA-PSK SAE
+group_cipher=CCMP
+rsn_pairwise_cipher=CCMP
+---HOSTAPD wifi1ap2
+bssid=02:00:00:00:00:02
+ssid=ExampleLAN
+wps_state=disabled
+wpa=2
+key_mgmt=FT-SAE SAE
+group_cipher=CCMP
+rsn_pairwise_cipher=CCMP
+---HOSTAPD wifi1ap3
+bssid=02:00:00:00:00:14
+ssid=element-example
+wps_state=disabled
+wpa=2
+key_mgmt=WPA-PSK
+group_cipher=CCMP
+rsn_pairwise_cipher=CCMP
+---HOSTAPD wifi2ap5
+bssid=02:00:00:00:00:12
+ssid=element-example
+wps_state=disabled
+wpa=2
+key_mgmt=SAE
+group_cipher=CCMP
+rsn_pairwise_cipher=CCMP

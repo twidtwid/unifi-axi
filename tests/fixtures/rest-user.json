@@ -1,0 +1,35 @@
+{
+ "data": [
+  {
+   "hostname": "iPhone",
+   "is_wired": false,
+   "last_seen": 1795137482,
+   "mac": "02:00:00:00:a0:02",
+   "name": "Sam iPhone"
+  },
+  {
+   "hostname": "Watch",
+   "is_wired": false,
+   "last_seen": 1795114244,
+   "mac": "02:00:00:00:a0:03",
+   "name": "Alex Watch"
+  },
+  {
+   "hostname": "iPhone",
+   "is_wired": false,
+   "last_seen": 1795143193,
+   "mac": "02:00:00:00:a0:01",
+   "name": "Alex iPhone"
+  },
+  {
+   "hostname": "iPhone",
+   "is_wired": false,
+   "last_seen": 1795058225,
+   "mac": "02:00:00:00:a0:04",
+   "name": null
+  }
+ ],
+ "meta": {
+  "rc": "ok"
+ }
+}

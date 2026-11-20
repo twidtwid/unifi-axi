@@ -1,0 +1,1255 @@
+{
+ "data": [
+  {
+   "category": "AUDIT",
+   "event": "MADE_CHANGES",
+   "id": "000000000000000000000005",
+   "key": "MADE_CHANGES_MULTIPLE_SETTING_OBJECTS",
+   "message_raw": "{ADMIN} made {COUNT} changes to {OBJECT} {SECTION} settings. Source IP: {IP}",
+   "parameters": {
+    "ADMIN": {
+     "id": "000000000000000000000006",
+     "name": "UniFi User",
+     "not_actionable": true
+    },
+    "ADMIN_ACTIVITY_ID": {
+     "id": "000000000000000000000007"
+    },
+    "CONSOLE_NAME": {
+     "id": "Example Gateway",
+     "name": "Example Gateway"
+    },
+    "COUNT": {
+     "name": "2",
+     "not_actionable": true
+    },
+    "IP": {
+     "id": "192.0.2.149",
+     "name": "192.0.2.149",
+     "not_actionable": true
+    },
+    "OBJECT": {
+     "id": "02:00:00:00:00:0c",
+     "name": "AP Office",
+     "not_actionable": true
+    },
+    "PLATFORM": {
+     "id": "WEB",
+     "name": "web",
+     "not_actionable": true
+    },
+    "SECTION": {
+     "id": "DEVICE",
+     "not_actionable": true
+    }
+   },
+   "severity": "MEDIUM",
+   "show_on_dashboard": false,
+   "status": "NEW",
+   "subcategory": "SYSTEM_ADMIN",
+   "target": "ADMIN",
+   "timestamp": 1795111710379,
+   "title_raw": "Config Modified",
+   "type": "ADMIN_ACCESS"
+  },
+  {
+   "category": "CLIENT_DEVICES",
+   "event": "CLIENT_ROAMED",
+   "id": "000000000000000000000008",
+   "key": "CLIENT_ROAMED_2",
+   "message_raw": "{CLIENT} roamed from {DEVICE_FROM} to {DEVICE_TO}. Connection Info: {WIFI_STATS}. Roaming Decision: {PREVIOUS_SIGNAL_STRENGTH} dBm to {SIGNAL_STRENGTH} dBm.",
+   "parameters": {
+    "CHANNEL": {
+     "id": "02:00:00:00:a0:01",
+     "name": "36",
+     "not_actionable": true
+    },
+    "CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "40"
+    },
+    "CLIENT": {
+     "device_fingerprint_id": 6112,
+     "fingerprint_source": 0,
+     "hostname": "iPhone",
+     "id": "02:00:00:00:a0:01",
+     "ip": "192.0.2.13",
+     "name": "Alex iPhone"
+    },
+    "CONSOLE_NAME": {
+     "id": "Example Gateway",
+     "name": "Example Gateway"
+    },
+    "DEVICE_FROM": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0c",
+     "ip": "192.0.2.92",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Office",
+     "version": "8.8.14"
+    },
+    "DEVICE_TO": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0f",
+     "ip": "192.0.2.38",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Den",
+     "version": "8.8.14"
+    },
+    "PREVIOUS_CHANNEL": {
+     "id": "02:00:00:00:a0:01",
+     "name": "149",
+     "not_actionable": true
+    },
+    "PREVIOUS_CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "40"
+    },
+    "PREVIOUS_RADIO_BAND": {
+     "id": "02:00:00:00:a0:01",
+     "name": "na"
+    },
+    "PREVIOUS_SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "-75",
+     "not_actionable": true
+    },
+    "RADIO_BAND": {
+     "id": "02:00:00:00:a0:01",
+     "name": "na"
+    },
+    "SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "-68",
+     "not_actionable": true
+    },
+    "WIFI_STATS": {
+     "id": "02:00:00:00:a0:01",
+     "name": "Ch. 36 (5 GHz, 40 MHz), -68 dBm",
+     "not_actionable": true
+    },
+    "WLAN": {
+     "id": "000000000000000000000009",
+     "name": "ExampleLAN"
+    }
+   },
+   "severity": "LOW",
+   "show_on_dashboard": false,
+   "status": "NEW",
+   "subcategory": "MONITORING_WIFI",
+   "target": "CLIENT",
+   "timestamp": 1795111565866,
+   "title_raw": "WiFi Client Roamed",
+   "type": "CLIENT_CONNECTION"
+  },
+  {
+   "category": "CLIENT_DEVICES",
+   "event": "CLIENT_ROAMED",
+   "id": "00000000000000000000000a",
+   "key": "CLIENT_ROAMED_2",
+   "message_raw": "{CLIENT} roamed from {DEVICE_FROM} to {DEVICE_TO}. Connection Info: {WIFI_STATS}. Roaming Decision: {PREVIOUS_SIGNAL_STRENGTH} dBm to {SIGNAL_STRENGTH} dBm.",
+   "parameters": {
+    "CHANNEL": {
+     "id": "02:00:00:00:a0:03",
+     "name": "36",
+     "not_actionable": true
+    },
+    "CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "40"
+    },
+    "CLIENT": {
+     "device_fingerprint_id": 5668,
+     "fingerprint_source": 0,
+     "hostname": "Watch",
+     "id": "02:00:00:00:a0:03",
+     "ip": "192.0.2.156",
+     "name": "Alex Watch"
+    },
+    "CONSOLE_NAME": {
+     "id": "Example Gateway",
+     "name": "Example Gateway"
+    },
+    "DEVICE_FROM": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0c",
+     "ip": "192.0.2.92",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Office",
+     "version": "8.8.14"
+    },
+    "DEVICE_TO": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0f",
+     "ip": "192.0.2.38",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Den",
+     "version": "8.8.14"
+    },
+    "PREVIOUS_CHANNEL": {
+     "id": "02:00:00:00:a0:03",
+     "name": "149",
+     "not_actionable": true
+    },
+    "PREVIOUS_CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "40"
+    },
+    "PREVIOUS_RADIO_BAND": {
+     "id": "02:00:00:00:a0:03",
+     "name": "na"
+    },
+    "PREVIOUS_SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "-64",
+     "not_actionable": true
+    },
+    "RADIO_BAND": {
+     "id": "02:00:00:00:a0:03",
+     "name": "na"
+    },
+    "SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "-70",
+     "not_actionable": true
+    },
+    "WIFI_STATS": {
+     "id": "02:00:00:00:a0:03",
+     "name": "Ch. 36 (5 GHz, 40 MHz), -70 dBm",
+     "not_actionable": true
+    },
+    "WLAN": {
+     "id": "000000000000000000000009",
+     "name": "ExampleLAN"
+    }
+   },
+   "severity": "LOW",
+   "show_on_dashboard": false,
+   "status": "NEW",
+   "subcategory": "MONITORING_WIFI",
+   "target": "CLIENT",
+   "timestamp": 1795111490854,
+   "title_raw": "WiFi Client Roamed",
+   "type": "CLIENT_CONNECTION"
+  },
+  {
+   "category": "CLIENT_DEVICES",
+   "event": "CLIENT_ROAMED",
+   "id": "00000000000000000000000b",
+   "key": "CLIENT_ROAMED_2",
+   "message_raw": "{CLIENT} roamed from {DEVICE_FROM} to {DEVICE_TO}. Connection Info: {WIFI_STATS}. Roaming Decision: {PREVIOUS_SIGNAL_STRENGTH} dBm to {SIGNAL_STRENGTH} dBm.",
+   "parameters": {
+    "CHANNEL": {
+     "id": "02:00:00:00:00:11",
+     "name": "157",
+     "not_actionable": true
+    },
+    "CHANNEL_WIDTH": {
+     "id": "02:00:00:00:00:11",
+     "name": "40"
+    },
+    "CLIENT": {
+     "device_fingerprint_id": 4207,
+     "fingerprint_source": 0,
+     "hostname": "vacuum-01",
+     "id": "02:00:00:00:00:11",
+     "ip": "192.0.2.213",
+     "name": "vacuum-01 00:11"
+    },
+    "CONSOLE_NAME": {
+     "id": "Example Gateway",
+     "name": "Example Gateway"
+    },
+    "DEVICE_FROM": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0c",
+     "ip": "192.0.2.92",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Office",
+     "version": "8.8.14"
+    },
+    "DEVICE_TO": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:06",
+     "ip": "192.0.2.169",
+     "model": "U7-Pro-Outdoor",
+     "model_name": "UAPA6A6",
+     "name": "AP Patio",
+     "version": "8.8.14"
+    },
+    "PREVIOUS_CHANNEL": {
+     "id": "02:00:00:00:00:11",
+     "name": "149",
+     "not_actionable": true
+    },
+    "PREVIOUS_CHANNEL_WIDTH": {
+     "id": "02:00:00:00:00:11",
+     "name": "40"
+    },
+    "PREVIOUS_RADIO_BAND": {
+     "id": "02:00:00:00:00:11",
+     "name": "na"
+    },
+    "PREVIOUS_SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:00:11",
+     "name": "-48",
+     "not_actionable": true
+    },
+    "RADIO_BAND": {
+     "id": "02:00:00:00:00:11",
+     "name": "na"
+    },
+    "SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:00:11",
+     "name": "-52",
+     "not_actionable": true
+    },
+    "WIFI_STATS": {
+     "id": "02:00:00:00:00:11",
+     "name": "Ch. 157 (5 GHz, 40 MHz), -52 dBm",
+     "not_actionable": true
+    },
+    "WLAN": {
+     "id": "000000000000000000000009",
+     "name": "ExampleLAN"
+    }
+   },
+   "severity": "LOW",
+   "show_on_dashboard": false,
+   "status": "NEW",
+   "subcategory": "MONITORING_WIFI",
+   "target": "CLIENT",
+   "timestamp": 1795111277217,
+   "title_raw": "WiFi Client Roamed",
+   "type": "CLIENT_CONNECTION"
+  },
+  {
+   "category": "CLIENT_DEVICES",
+   "event": "CLIENT_ROAMED",
+   "id": "00000000000000000000000c",
+   "key": "CLIENT_ROAMED_2",
+   "message_raw": "{CLIENT} roamed from {DEVICE_FROM} to {DEVICE_TO}. Connection Info: {WIFI_STATS}. Roaming Decision: {PREVIOUS_SIGNAL_STRENGTH} dBm to {SIGNAL_STRENGTH} dBm.",
+   "parameters": {
+    "CHANNEL": {
+     "id": "02:00:00:00:00:11",
+     "name": "149",
+     "not_actionable": true
+    },
+    "CHANNEL_WIDTH": {
+     "id": "02:00:00:00:00:11",
+     "name": "40"
+    },
+    "CLIENT": {
+     "device_fingerprint_id": 4207,
+     "fingerprint_source": 0,
+     "hostname": "vacuum-01",
+     "id": "02:00:00:00:00:11",
+     "ip": "192.0.2.213",
+     "name": "vacuum-01 00:11"
+    },
+    "CONSOLE_NAME": {
+     "id": "Example Gateway",
+     "name": "Example Gateway"
+    },
+    "DEVICE_FROM": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0f",
+     "ip": "192.0.2.38",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Den",
+     "version": "8.8.14"
+    },
+    "DEVICE_TO": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0c",
+     "ip": "192.0.2.92",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Office",
+     "version": "8.8.14"
+    },
+    "PREVIOUS_CHANNEL": {
+     "id": "02:00:00:00:00:11",
+     "name": "36",
+     "not_actionable": true
+    },
+    "PREVIOUS_CHANNEL_WIDTH": {
+     "id": "02:00:00:00:00:11",
+     "name": "40"
+    },
+    "PREVIOUS_RADIO_BAND": {
+     "id": "02:00:00:00:00:11",
+     "name": "na"
+    },
+    "PREVIOUS_SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:00:11",
+     "name": "-74",
+     "not_actionable": true
+    },
+    "RADIO_BAND": {
+     "id": "02:00:00:00:00:11",
+     "name": "na"
+    },
+    "SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:00:11",
+     "name": "-40",
+     "not_actionable": true
+    },
+    "WIFI_STATS": {
+     "id": "02:00:00:00:00:11",
+     "name": "Ch. 149 (5 GHz, 40 MHz), -40 dBm",
+     "not_actionable": true
+    },
+    "WLAN": {
+     "id": "000000000000000000000009",
+     "name": "ExampleLAN"
+    }
+   },
+   "severity": "LOW",
+   "show_on_dashboard": false,
+   "status": "NEW",
+   "subcategory": "MONITORING_WIFI",
+   "target": "CLIENT",
+   "timestamp": 1795111247463,
+   "title_raw": "WiFi Client Roamed",
+   "type": "CLIENT_CONNECTION"
+  },
+  {
+   "category": "CLIENT_DEVICES",
+   "event": "CLIENT_ROAMED",
+   "id": "00000000000000000000000d",
+   "key": "CLIENT_ROAMED_2",
+   "message_raw": "{CLIENT} roamed from {DEVICE_FROM} to {DEVICE_TO}. Connection Info: {WIFI_STATS}. Roaming Decision: {PREVIOUS_SIGNAL_STRENGTH} dBm to {SIGNAL_STRENGTH} dBm.",
+   "parameters": {
+    "CHANNEL": {
+     "id": "02:00:00:00:a0:01",
+     "name": "149",
+     "not_actionable": true
+    },
+    "CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "40"
+    },
+    "CLIENT": {
+     "device_fingerprint_id": 6112,
+     "fingerprint_source": 0,
+     "hostname": "iPhone",
+     "id": "02:00:00:00:a0:01",
+     "ip": "192.0.2.13",
+     "name": "Alex iPhone"
+    },
+    "CONSOLE_NAME": {
+     "id": "Example Gateway",
+     "name": "Example Gateway"
+    },
+    "DEVICE_FROM": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:06",
+     "ip": "192.0.2.169",
+     "model": "U7-Pro-Outdoor",
+     "model_name": "UAPA6A6",
+     "name": "AP Patio",
+     "version": "8.8.14"
+    },
+    "DEVICE_TO": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0c",
+     "ip": "192.0.2.92",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Office",
+     "version": "8.8.14"
+    },
+    "PREVIOUS_CHANNEL": {
+     "id": "02:00:00:00:a0:01",
+     "name": "157",
+     "not_actionable": true
+    },
+    "PREVIOUS_CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "40"
+    },
+    "PREVIOUS_RADIO_BAND": {
+     "id": "02:00:00:00:a0:01",
+     "name": "na"
+    },
+    "PREVIOUS_SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "-59",
+     "not_actionable": true
+    },
+    "RADIO_BAND": {
+     "id": "02:00:00:00:a0:01",
+     "name": "na"
+    },
+    "SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "-63",
+     "not_actionable": true
+    },
+    "WIFI_STATS": {
+     "id": "02:00:00:00:a0:01",
+     "name": "Ch. 149 (5 GHz, 40 MHz), -63 dBm",
+     "not_actionable": true
+    },
+    "WLAN": {
+     "id": "000000000000000000000009",
+     "name": "ExampleLAN"
+    }
+   },
+   "severity": "LOW",
+   "show_on_dashboard": false,
+   "status": "NEW",
+   "subcategory": "MONITORING_WIFI",
+   "target": "CLIENT",
+   "timestamp": 1795111045790,
+   "title_raw": "WiFi Client Roamed",
+   "type": "CLIENT_CONNECTION"
+  },
+  {
+   "category": "CLIENT_DEVICES",
+   "event": "CLIENT_ROAMED",
+   "id": "00000000000000000000000e",
+   "key": "CLIENT_ROAMED_2",
+   "message_raw": "{CLIENT} roamed from {DEVICE_FROM} to {DEVICE_TO}. Connection Info: {WIFI_STATS}. Roaming Decision: {PREVIOUS_SIGNAL_STRENGTH} dBm to {SIGNAL_STRENGTH} dBm.",
+   "parameters": {
+    "CHANNEL": {
+     "id": "02:00:00:00:a0:03",
+     "name": "149",
+     "not_actionable": true
+    },
+    "CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "40"
+    },
+    "CLIENT": {
+     "device_fingerprint_id": 5668,
+     "fingerprint_source": 0,
+     "hostname": "Watch",
+     "id": "02:00:00:00:a0:03",
+     "ip": "192.0.2.156",
+     "name": "Alex Watch"
+    },
+    "CONSOLE_NAME": {
+     "id": "Example Gateway",
+     "name": "Example Gateway"
+    },
+    "DEVICE_FROM": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0f",
+     "ip": "192.0.2.38",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Den",
+     "version": "8.8.14"
+    },
+    "DEVICE_TO": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0c",
+     "ip": "192.0.2.92",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Office",
+     "version": "8.8.14"
+    },
+    "PREVIOUS_CHANNEL": {
+     "id": "02:00:00:00:a0:03",
+     "name": "11",
+     "not_actionable": true
+    },
+    "PREVIOUS_CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "20"
+    },
+    "PREVIOUS_RADIO_BAND": {
+     "id": "02:00:00:00:a0:03",
+     "name": "ng"
+    },
+    "PREVIOUS_SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "-53",
+     "not_actionable": true
+    },
+    "RADIO_BAND": {
+     "id": "02:00:00:00:a0:03",
+     "name": "na"
+    },
+    "SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "-61",
+     "not_actionable": true
+    },
+    "WIFI_STATS": {
+     "id": "02:00:00:00:a0:03",
+     "name": "Ch. 149 (5 GHz, 40 MHz), -61 dBm",
+     "not_actionable": true
+    },
+    "WLAN": {
+     "id": "000000000000000000000009",
+     "name": "ExampleLAN"
+    }
+   },
+   "severity": "LOW",
+   "show_on_dashboard": false,
+   "status": "NEW",
+   "subcategory": "MONITORING_WIFI",
+   "target": "CLIENT",
+   "timestamp": 1795111045787,
+   "title_raw": "WiFi Client Roamed",
+   "type": "CLIENT_CONNECTION"
+  },
+  {
+   "category": "CLIENT_DEVICES",
+   "event": "CLIENT_ROAMED",
+   "id": "00000000000000000000000f",
+   "key": "CLIENT_ROAMED_2",
+   "message_raw": "{CLIENT} roamed from {DEVICE_FROM} to {DEVICE_TO}. Connection Info: {WIFI_STATS}. Roaming Decision: {PREVIOUS_SIGNAL_STRENGTH} dBm to {SIGNAL_STRENGTH} dBm.",
+   "parameters": {
+    "CHANNEL": {
+     "id": "02:00:00:00:a0:03",
+     "name": "149",
+     "not_actionable": true
+    },
+    "CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "40"
+    },
+    "CLIENT": {
+     "device_fingerprint_id": 5668,
+     "fingerprint_source": 0,
+     "hostname": "Watch",
+     "id": "02:00:00:00:a0:03",
+     "ip": "192.0.2.156",
+     "name": "Alex Watch"
+    },
+    "CONSOLE_NAME": {
+     "id": "Example Gateway",
+     "name": "Example Gateway"
+    },
+    "DEVICE_FROM": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:06",
+     "ip": "192.0.2.169",
+     "model": "U7-Pro-Outdoor",
+     "model_name": "UAPA6A6",
+     "name": "AP Patio",
+     "version": "8.8.14"
+    },
+    "DEVICE_TO": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0c",
+     "ip": "192.0.2.92",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Office",
+     "version": "8.8.14"
+    },
+    "PREVIOUS_CHANNEL": {
+     "id": "02:00:00:00:a0:03",
+     "name": "11",
+     "not_actionable": true
+    },
+    "PREVIOUS_CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "20"
+    },
+    "PREVIOUS_RADIO_BAND": {
+     "id": "02:00:00:00:a0:03",
+     "name": "ng"
+    },
+    "PREVIOUS_SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "-61",
+     "not_actionable": true
+    },
+    "RADIO_BAND": {
+     "id": "02:00:00:00:a0:03",
+     "name": "na"
+    },
+    "SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "-61",
+     "not_actionable": true
+    },
+    "WIFI_STATS": {
+     "id": "02:00:00:00:a0:03",
+     "name": "Ch. 149 (5 GHz, 40 MHz), -61 dBm",
+     "not_actionable": true
+    },
+    "WLAN": {
+     "id": "000000000000000000000009",
+     "name": "ExampleLAN"
+    }
+   },
+   "severity": "LOW",
+   "show_on_dashboard": false,
+   "status": "NEW",
+   "subcategory": "MONITORING_WIFI",
+   "target": "CLIENT",
+   "timestamp": 1795111014577,
+   "title_raw": "WiFi Client Roamed",
+   "type": "CLIENT_CONNECTION"
+  },
+  {
+   "category": "CLIENT_DEVICES",
+   "event": "CLIENT_ROAMED",
+   "id": "000000000000000000000010",
+   "key": "CLIENT_ROAMED_2",
+   "message_raw": "{CLIENT} roamed from {DEVICE_FROM} to {DEVICE_TO}. Connection Info: {WIFI_STATS}. Roaming Decision: {PREVIOUS_SIGNAL_STRENGTH} dBm to {SIGNAL_STRENGTH} dBm.",
+   "parameters": {
+    "CHANNEL": {
+     "id": "02:00:00:00:a0:01",
+     "name": "149",
+     "not_actionable": true
+    },
+    "CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "40"
+    },
+    "CLIENT": {
+     "device_fingerprint_id": 6112,
+     "fingerprint_source": 0,
+     "hostname": "iPhone",
+     "id": "02:00:00:00:a0:01",
+     "ip": "192.0.2.13",
+     "name": "Alex iPhone"
+    },
+    "CONSOLE_NAME": {
+     "id": "Example Gateway",
+     "name": "Example Gateway"
+    },
+    "DEVICE_FROM": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:06",
+     "ip": "192.0.2.169",
+     "model": "U7-Pro-Outdoor",
+     "model_name": "UAPA6A6",
+     "name": "AP Patio",
+     "version": "8.8.14"
+    },
+    "DEVICE_TO": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0c",
+     "ip": "192.0.2.92",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Office",
+     "version": "8.8.14"
+    },
+    "PREVIOUS_CHANNEL": {
+     "id": "02:00:00:00:a0:01",
+     "name": "157",
+     "not_actionable": true
+    },
+    "PREVIOUS_CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "40"
+    },
+    "PREVIOUS_RADIO_BAND": {
+     "id": "02:00:00:00:a0:01",
+     "name": "na"
+    },
+    "PREVIOUS_SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "-59",
+     "not_actionable": true
+    },
+    "RADIO_BAND": {
+     "id": "02:00:00:00:a0:01",
+     "name": "na"
+    },
+    "SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "-59",
+     "not_actionable": true
+    },
+    "WIFI_STATS": {
+     "id": "02:00:00:00:a0:01",
+     "name": "Ch. 149 (5 GHz, 40 MHz), -59 dBm",
+     "not_actionable": true
+    },
+    "WLAN": {
+     "id": "000000000000000000000009",
+     "name": "ExampleLAN"
+    }
+   },
+   "severity": "LOW",
+   "show_on_dashboard": false,
+   "status": "NEW",
+   "subcategory": "MONITORING_WIFI",
+   "target": "CLIENT",
+   "timestamp": 1795111013638,
+   "title_raw": "WiFi Client Roamed",
+   "type": "CLIENT_CONNECTION"
+  },
+  {
+   "category": "CLIENT_DEVICES",
+   "event": "CLIENT_ROAMED",
+   "id": "000000000000000000000011",
+   "key": "CLIENT_ROAMED_2",
+   "message_raw": "{CLIENT} roamed from {DEVICE_FROM} to {DEVICE_TO}. Connection Info: {WIFI_STATS}. Roaming Decision: {PREVIOUS_SIGNAL_STRENGTH} dBm to {SIGNAL_STRENGTH} dBm.",
+   "parameters": {
+    "CHANNEL": {
+     "id": "02:00:00:00:a0:01",
+     "name": "157",
+     "not_actionable": true
+    },
+    "CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "40"
+    },
+    "CLIENT": {
+     "device_fingerprint_id": 6112,
+     "fingerprint_source": 0,
+     "hostname": "iPhone",
+     "id": "02:00:00:00:a0:01",
+     "ip": "192.0.2.13",
+     "name": "Alex iPhone"
+    },
+    "CONSOLE_NAME": {
+     "id": "Example Gateway",
+     "name": "Example Gateway"
+    },
+    "DEVICE_FROM": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0c",
+     "ip": "192.0.2.92",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Office",
+     "version": "8.8.14"
+    },
+    "DEVICE_TO": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:06",
+     "ip": "192.0.2.169",
+     "model": "U7-Pro-Outdoor",
+     "model_name": "UAPA6A6",
+     "name": "AP Patio",
+     "version": "8.8.14"
+    },
+    "PREVIOUS_CHANNEL": {
+     "id": "02:00:00:00:a0:01",
+     "name": "149",
+     "not_actionable": true
+    },
+    "PREVIOUS_CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "40"
+    },
+    "PREVIOUS_RADIO_BAND": {
+     "id": "02:00:00:00:a0:01",
+     "name": "na"
+    },
+    "PREVIOUS_SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "-60",
+     "not_actionable": true
+    },
+    "RADIO_BAND": {
+     "id": "02:00:00:00:a0:01",
+     "name": "na"
+    },
+    "SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "-63",
+     "not_actionable": true
+    },
+    "WIFI_STATS": {
+     "id": "02:00:00:00:a0:01",
+     "name": "Ch. 157 (5 GHz, 40 MHz), -63 dBm",
+     "not_actionable": true
+    },
+    "WLAN": {
+     "id": "000000000000000000000009",
+     "name": "ExampleLAN"
+    }
+   },
+   "severity": "LOW",
+   "show_on_dashboard": false,
+   "status": "NEW",
+   "subcategory": "MONITORING_WIFI",
+   "target": "CLIENT",
+   "timestamp": 1795110836540,
+   "title_raw": "WiFi Client Roamed",
+   "type": "CLIENT_CONNECTION"
+  },
+  {
+   "category": "CLIENT_DEVICES",
+   "event": "CLIENT_ROAMED",
+   "id": "000000000000000000000012",
+   "key": "CLIENT_ROAMED_2",
+   "message_raw": "{CLIENT} roamed from {DEVICE_FROM} to {DEVICE_TO}. Connection Info: {WIFI_STATS}. Roaming Decision: {PREVIOUS_SIGNAL_STRENGTH} dBm to {SIGNAL_STRENGTH} dBm.",
+   "parameters": {
+    "CHANNEL": {
+     "id": "02:00:00:00:a0:03",
+     "name": "11",
+     "not_actionable": true
+    },
+    "CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "20"
+    },
+    "CLIENT": {
+     "device_fingerprint_id": 5668,
+     "fingerprint_source": 0,
+     "hostname": "Watch",
+     "id": "02:00:00:00:a0:03",
+     "ip": "192.0.2.156",
+     "name": "Alex Watch"
+    },
+    "CONSOLE_NAME": {
+     "id": "Example Gateway",
+     "name": "Example Gateway"
+    },
+    "DEVICE_FROM": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0f",
+     "ip": "192.0.2.38",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Den",
+     "version": "8.8.14"
+    },
+    "DEVICE_TO": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:06",
+     "ip": "192.0.2.169",
+     "model": "U7-Pro-Outdoor",
+     "model_name": "UAPA6A6",
+     "name": "AP Patio",
+     "version": "8.8.14"
+    },
+    "PREVIOUS_CHANNEL": {
+     "id": "02:00:00:00:a0:03",
+     "name": "11",
+     "not_actionable": true
+    },
+    "PREVIOUS_CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "20"
+    },
+    "PREVIOUS_RADIO_BAND": {
+     "id": "02:00:00:00:a0:03",
+     "name": "ng"
+    },
+    "PREVIOUS_SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "-54",
+     "not_actionable": true
+    },
+    "RADIO_BAND": {
+     "id": "02:00:00:00:a0:03",
+     "name": "ng"
+    },
+    "SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:03",
+     "name": "-70",
+     "not_actionable": true
+    },
+    "WIFI_STATS": {
+     "id": "02:00:00:00:a0:03",
+     "name": "Ch. 11 (2.4 GHz, 20 MHz), -70 dBm",
+     "not_actionable": true
+    },
+    "WLAN": {
+     "id": "000000000000000000000009",
+     "name": "ExampleLAN"
+    }
+   },
+   "severity": "LOW",
+   "show_on_dashboard": false,
+   "status": "NEW",
+   "subcategory": "MONITORING_WIFI",
+   "target": "CLIENT",
+   "timestamp": 1795110833159,
+   "title_raw": "WiFi Client Roamed",
+   "type": "CLIENT_CONNECTION"
+  },
+  {
+   "category": "CLIENT_DEVICES",
+   "event": "CLIENT_ROAMED",
+   "id": "000000000000000000000013",
+   "key": "CLIENT_ROAMED_2",
+   "message_raw": "{CLIENT} roamed from {DEVICE_FROM} to {DEVICE_TO}. Connection Info: {WIFI_STATS}. Roaming Decision: {PREVIOUS_SIGNAL_STRENGTH} dBm to {SIGNAL_STRENGTH} dBm.",
+   "parameters": {
+    "CHANNEL": {
+     "id": "02:00:00:00:a0:01",
+     "name": "149",
+     "not_actionable": true
+    },
+    "CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "40"
+    },
+    "CLIENT": {
+     "device_fingerprint_id": 6112,
+     "fingerprint_source": 0,
+     "hostname": "iPhone",
+     "id": "02:00:00:00:a0:01",
+     "ip": "192.0.2.13",
+     "name": "Alex iPhone"
+    },
+    "CONSOLE_NAME": {
+     "id": "Example Gateway",
+     "name": "Example Gateway"
+    },
+    "DEVICE_FROM": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0f",
+     "ip": "192.0.2.38",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Den",
+     "version": "8.8.14"
+    },
+    "DEVICE_TO": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0c",
+     "ip": "192.0.2.92",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Office",
+     "version": "8.8.14"
+    },
+    "PREVIOUS_CHANNEL": {
+     "id": "02:00:00:00:a0:01",
+     "name": "11",
+     "not_actionable": true
+    },
+    "PREVIOUS_CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "20"
+    },
+    "PREVIOUS_RADIO_BAND": {
+     "id": "02:00:00:00:a0:01",
+     "name": "ng"
+    },
+    "PREVIOUS_SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "-57",
+     "not_actionable": true
+    },
+    "RADIO_BAND": {
+     "id": "02:00:00:00:a0:01",
+     "name": "na"
+    },
+    "SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "-47",
+     "not_actionable": true
+    },
+    "WIFI_STATS": {
+     "id": "02:00:00:00:a0:01",
+     "name": "Ch. 149 (5 GHz, 40 MHz), -47 dBm",
+     "not_actionable": true
+    },
+    "WLAN": {
+     "id": "000000000000000000000009",
+     "name": "ExampleLAN"
+    }
+   },
+   "severity": "LOW",
+   "show_on_dashboard": false,
+   "status": "NEW",
+   "subcategory": "MONITORING_WIFI",
+   "target": "CLIENT",
+   "timestamp": 1795110819697,
+   "title_raw": "WiFi Client Roamed",
+   "type": "CLIENT_CONNECTION"
+  },
+  {
+   "category": "CLIENT_DEVICES",
+   "event": "CLIENT_ROAMED",
+   "id": "000000000000000000000014",
+   "key": "CLIENT_ROAMED_2",
+   "message_raw": "{CLIENT} roamed from {DEVICE_FROM} to {DEVICE_TO}. Connection Info: {WIFI_STATS}. Roaming Decision: {PREVIOUS_SIGNAL_STRENGTH} dBm to {SIGNAL_STRENGTH} dBm.",
+   "parameters": {
+    "CHANNEL": {
+     "id": "02:00:00:00:a0:01",
+     "name": "44",
+     "not_actionable": true
+    },
+    "CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "40"
+    },
+    "CLIENT": {
+     "device_fingerprint_id": 6112,
+     "fingerprint_source": 0,
+     "hostname": "iPhone",
+     "id": "02:00:00:00:a0:01",
+     "ip": "192.0.2.13",
+     "name": "Alex iPhone"
+    },
+    "CONSOLE_NAME": {
+     "id": "Example Gateway",
+     "name": "Example Gateway"
+    },
+    "DEVICE_FROM": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0c",
+     "ip": "192.0.2.92",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Office",
+     "version": "8.8.14"
+    },
+    "DEVICE_TO": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:09",
+     "ip": "192.0.2.124",
+     "model": "U7-Lite",
+     "model_name": "UAPA693",
+     "name": "AP Shop",
+     "version": "8.8.14"
+    },
+    "PREVIOUS_CHANNEL": {
+     "id": "02:00:00:00:a0:01",
+     "name": "149",
+     "not_actionable": true
+    },
+    "PREVIOUS_CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "40"
+    },
+    "PREVIOUS_RADIO_BAND": {
+     "id": "02:00:00:00:a0:01",
+     "name": "na"
+    },
+    "PREVIOUS_SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "-80",
+     "not_actionable": true
+    },
+    "RADIO_BAND": {
+     "id": "02:00:00:00:a0:01",
+     "name": "na"
+    },
+    "SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "-72",
+     "not_actionable": true
+    },
+    "WIFI_STATS": {
+     "id": "02:00:00:00:a0:01",
+     "name": "Ch. 44 (5 GHz, 40 MHz), -72 dBm",
+     "not_actionable": true
+    },
+    "WLAN": {
+     "id": "000000000000000000000009",
+     "name": "ExampleLAN"
+    }
+   },
+   "severity": "LOW",
+   "show_on_dashboard": false,
+   "status": "NEW",
+   "subcategory": "MONITORING_WIFI",
+   "target": "CLIENT",
+   "timestamp": 1795110723786,
+   "title_raw": "WiFi Client Roamed",
+   "type": "CLIENT_CONNECTION"
+  },
+  {
+   "category": "CLIENT_DEVICES",
+   "event": "CLIENT_ROAMED",
+   "id": "000000000000000000000015",
+   "key": "CLIENT_ROAMED_2",
+   "message_raw": "{CLIENT} roamed from {DEVICE_FROM} to {DEVICE_TO}. Connection Info: {WIFI_STATS}. Roaming Decision: {PREVIOUS_SIGNAL_STRENGTH} dBm to {SIGNAL_STRENGTH} dBm.",
+   "parameters": {
+    "CHANNEL": {
+     "id": "02:00:00:00:a0:01",
+     "name": "11",
+     "not_actionable": true
+    },
+    "CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "20"
+    },
+    "CLIENT": {
+     "device_fingerprint_id": 6112,
+     "fingerprint_source": 0,
+     "hostname": "iPhone",
+     "id": "02:00:00:00:a0:01",
+     "ip": "192.0.2.13",
+     "name": "Alex iPhone"
+    },
+    "CONSOLE_NAME": {
+     "id": "Example Gateway",
+     "name": "Example Gateway"
+    },
+    "DEVICE_FROM": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:09",
+     "ip": "192.0.2.124",
+     "model": "U7-Lite",
+     "model_name": "UAPA693",
+     "name": "AP Shop",
+     "version": "8.8.14"
+    },
+    "DEVICE_TO": {
+     "fingerprint_source": 0,
+     "id": "02:00:00:00:00:0f",
+     "ip": "192.0.2.38",
+     "model": "U7-Pro",
+     "model_name": "U7PRO",
+     "name": "AP Den",
+     "version": "8.8.14"
+    },
+    "PREVIOUS_CHANNEL": {
+     "id": "02:00:00:00:a0:01",
+     "name": "44",
+     "not_actionable": true
+    },
+    "PREVIOUS_CHANNEL_WIDTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "40"
+    },
+    "PREVIOUS_RADIO_BAND": {
+     "id": "02:00:00:00:a0:01",
+     "name": "na"
+    },
+    "PREVIOUS_SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "-77",
+     "not_actionable": true
+    },
+    "RADIO_BAND": {
+     "id": "02:00:00:00:a0:01",
+     "name": "ng"
+    },
+    "SIGNAL_STRENGTH": {
+     "id": "02:00:00:00:a0:01",
+     "name": "-49",
+     "not_actionable": true
+    },
+    "WIFI_STATS": {
+     "id": "02:00:00:00:a0:01",
+     "name": "Ch. 11 (2.4 GHz, 20 MHz), -49 dBm",
+     "not_actionable": true
+    },
+    "WLAN": {
+     "id": "000000000000000000000009",
+     "name": "ExampleLAN"
+    }
+   },
+   "severity": "LOW",
+   "show_on_dashboard": false,
+   "status": "NEW",
+   "subcategory": "MONITORING_WIFI",
+   "target": "CLIENT",
+   "timestamp": 1795110723783,
+   "title_raw": "WiFi Client Roamed",
+   "type": "CLIENT_CONNECTION"
+  }
+ ],
+ "page_number": 0,
+ "total_element_count": 14,
+ "total_page_count": 1
+}

@@ -1,0 +1,36 @@
+{
+ "data": [
+  {
+   "_id": "000000000000000000000009",
+   "enabled": true,
+   "fast_roaming_enabled": true,
+   "name": "ExampleLAN",
+   "security": "wpapsk",
+   "wlan_bands": [
+    "2g",
+    "5g"
+   ],
+   "wpa3_fast_roaming": true,
+   "wpa3_support": true,
+   "wpa3_transition": false,
+   "wpa_mode": "wpa2"
+  },
+  {
+   "_id": "000000000000000000000016",
+   "enabled": true,
+   "fast_roaming_enabled": false,
+   "name": "ExampleIoT",
+   "security": "wpapsk",
+   "wlan_bands": [
+    "2g"
+   ],
+   "wpa3_fast_roaming": false,
+   "wpa3_support": true,
+   "wpa3_transition": true,
+   "wpa_mode": "wpa2"
+  }
+ ],
+ "meta": {
+  "rc": "ok"
+ }
+}

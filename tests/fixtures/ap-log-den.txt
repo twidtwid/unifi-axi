@@ -1,0 +1,82 @@
+EPOCH 1795143912
+DATE 2026-11-19 19:05:12
+FIRST Fri Oct 30 00:00:05 2026 user.notice kernel: procd: /etc/rc.d/S01license-pfm: /
+---
+Thu Nov 19 09:46:19 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: UBNT_ROAM received: STA roamed to peer AP 02:00:00:00:00:01
+Thu Nov 19 09:46:19 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: wifi0ap0: immediate disassoc for 02:00:00:00:a0:01 (roamed)
+Thu Nov 19 09:46:19 2026 user.notice hostapd[4771]: nl80211(QCA): wifi0ap0[18]: i802_sta_disassoc(02:00:00:00:a0:01)
+Thu Nov 19 09:46:19 2026 user.info hostapd[4771]: wifi1ap2: STA 02:00:00:00:a0:01 WPA: UBNT_ROAM received: STA roamed to peer AP 02:00:00:00:00:01
+Thu Nov 19 09:46:19 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: wifi0ap0: immediate disassoc for 02:00:00:00:a0:01 (roamed)
+Thu Nov 19 09:46:19 2026 user.notice hostapd[4771]: nl80211(QCA): wifi0ap0[18]: i802_sta_disassoc(02:00:00:00:a0:01)
+Thu Nov 19 09:46:19 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 IEEE 802.11: disassociated
+Thu Nov 19 09:46:19 2026 user.notice hostapd[4771]: wifi0ap0: AP-STA-DISCONNECTED 02:00:00:00:a0:01
+Thu Nov 19 09:46:19 2026 user.info stahtd[4761]: [STA-TRACKER].stahtd_dump_event(): {"op":"event","message_type":"STA_ASSOC_TRACKER","event_type":"sta_roam","mac":"02:00:00:00:a0:01","vap":"wifi0ap0","assoc_status":"0","event_id": "3","avg_rssi": "-53"}
+Thu Nov 19 09:46:19 2026 kern.info kernel: wlan: [4771:I:ANY] ieee80211_ucfg_setmlme: No peer found with mac 02:00:00:00:a0:01
+Thu Nov 19 09:46:19 2026 user.info wevent[4758]: wevent.ubnt_custom_event(): EVENT_STA_LEAVE wifi0ap0: 02:00:00:00:a0:01 / 2
+Thu Nov 19 09:48:24 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: UBNT_ROAM received: STA roamed to peer AP 02:00:00:00:00:02
+Thu Nov 19 09:48:24 2026 user.info hostapd[4771]: wifi1ap2: STA 02:00:00:00:a0:01 WPA: UBNT_ROAM received: STA roamed to peer AP 02:00:00:00:00:02
+Thu Nov 19 09:51:44 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: UBNT_ROAM received: STA roamed to peer AP 02:00:00:00:00:01
+Thu Nov 19 09:51:44 2026 user.info hostapd[4771]: wifi1ap2: STA 02:00:00:00:a0:01 WPA: UBNT_ROAM received: STA roamed to peer AP 02:00:00:00:00:01
+Thu Nov 19 09:52:02 2026 kern.info kernel: wlan: [0:I:ANY] [UNSPECIFIED] vap-0(wifi0ap0): [02:00:00:00:a0:01]recv auth frame with algorithm 2 seq 1 rssi:49 minrssi:0
+Thu Nov 19 09:52:02 2026 user.notice hostapd[4771]: HT: Forty MHz Intolerant is set by STA 02:00:00:00:a0:01 in Association Request
+Thu Nov 19 09:52:02 2026 kern.info kernel: wlan: [0:I:ANY] [UNSPECIFIED] vap-0(wifi0ap0): [02:00:00:00:a0:01]station associated at aid 3: short preamble, long slot time, QoSHE20 cap 0x1031
+Thu Nov 19 09:52:02 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 IEEE 802.11: did not acknowledge association response
+Thu Nov 19 09:52:02 2026 user.notice hostapd[4771]: nl80211(QCA): wifi0ap0[18]: i802_sta_deauth(02:00:00:00:a0:01)
+Thu Nov 19 09:52:02 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 IEEE 802.11: disassociated
+Thu Nov 19 09:52:02 2026 user.info stahtd[4761]: [STA-TRACKER].stahtd_dump_event(): {"op":"event","message_type":"STA_ASSOC_TRACKER","event_type":"sta_leave","mac":"02:00:00:00:a0:01","vap":"wifi0ap0","assoc_status":"0","event_id": "0","sta_dc_reason": "sta left"}
+Thu Nov 19 09:52:02 2026 user.info wevent[4758]: wevent.ubnt_custom_event(): EVENT_STA_LEAVE wifi0ap0: 02:00:00:00:a0:01 / 3
+Thu Nov 19 09:52:03 2026 kern.info kernel: wlan: [0:I:ANY] [UNSPECIFIED] vap-0(wifi0ap0): [02:00:00:00:a0:01]recv auth frame with algorithm 3 seq 1 rssi:48 minrssi:0
+Thu Nov 19 09:52:03 2026 kern.info kernel: wlan: [0:I:ANY] [UNSPECIFIED] vap-0(wifi0ap0): [02:00:00:00:a0:01]recv auth frame with algorithm 3 seq 2 rssi:47 minrssi:0
+Thu Nov 19 09:52:03 2026 kern.info kernel: wlan: [0:I:ANY] [UNSPECIFIED] vap-0(wifi0ap0): [02:00:00:00:a0:01]station associated at aid 3: short preamble, long slot time, QoSHE20 cap 0x1031
+Thu Nov 19 09:52:03 2026 user.notice hostapd[4771]: HT: Forty MHz Intolerant is set by STA 02:00:00:00:a0:01 in Association Request
+Thu Nov 19 09:52:03 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 IEEE 802.11: associated (aid 3)
+Thu Nov 19 09:52:03 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: sending 1/4 msg of 4-Way Handshake
+Thu Nov 19 09:52:03 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: received EAPOL-Key frame (2/4 Pairwise)
+Thu Nov 19 09:52:03 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: sending 3/4 msg of 4-Way Handshake
+Thu Nov 19 09:52:03 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: received EAPOL-Key frame (4/4 Pairwise)
+Thu Nov 19 09:52:03 2026 user.notice hostapd[4771]: wifi0ap0: AP-STA-CONNECTED 02:00:00:00:a0:01
+Thu Nov 19 09:52:03 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: wifi0ap0: UBNT_ROAM: STA=02:00:00:00:a0:01 associated_ap=02:00:00:00:00:03, broadcasting roam=1
+Thu Nov 19 09:52:03 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: authorized
+Thu Nov 19 09:52:03 2026 user.info stahtd[4761]: [STA-TRACKER].stahtd_dump_event(): {"op":"event","message_type":"STA_ASSOC_TRACKER","event_type":"association","mac":"02:00:00:00:a0:01","vap":"wifi0ap0","assoc_status":"0","event_id": "1","assoc_delta": "10000","auth_utc": "1795110722.305059","auth_algo": "sae","auth_rssi": "-49"}
+Thu Nov 19 09:52:03 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 RADIUS: starting accounting session 0000000000000001
+Thu Nov 19 09:52:03 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: pairwise key handshake completed (RSN)
+Thu Nov 19 09:52:03 2026 user.notice hostapd[4771]: wifi0ap0: EAPOL-4WAY-HS-COMPLETED 02:00:00:00:a0:01
+Thu Nov 19 09:52:03 2026 user.info wevent[4758]: wevent.ubnt_custom_event(): EVENT_STA_JOIN wifi0ap0: 02:00:00:00:a0:01 / 3
+Thu Nov 19 09:52:04 2026 kern.info kernel: [DHCP-SM] 02:00:00:00:a0:01: r-0-a
+Thu Nov 19 09:52:04 2026 user.info wevent[4758]: wevent.ubnt_custom_event(): EVENT_STA_IP wifi0ap0: 02:00:00:00:a0:01 / 192.0.2.13
+Thu Nov 19 09:52:13 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 RADIUS: starting accounting session 0000000000000001
+Thu Nov 19 09:52:17 2026 user.info stahtd[4761]: [STA-TRACKER].stahtd_dump_event(): {"op":"event","message_type":"STA_ASSOC_TRACKER","event_type":"soft failure","mac":"02:00:00:00:a0:01","vap":"wifi0ap0","assoc_status":"0","dns_responses": "12","dns_timeouts": "0","ip_delta": "440000","ip_assign_type": "dhcp","wpa_auth_delta": "70000","assoc_delta": "10000","auth_delta": "0","event_id": "2","auth_ts": "54961.000000","auth_utc": "1795110722.305059","arp_reply_gw_seen": "yes","dns_resp_seen": "yes","sta_dc_reason": "sta left","avg_rssi": "-44","auth_rssi": "-49","auth_algo": "sae"}
+Thu Nov 19 09:53:39 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: UBNT_ROAM received: STA roamed to peer AP 02:00:00:00:00:02
+Thu Nov 19 09:53:39 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: wifi0ap0: immediate disassoc for 02:00:00:00:a0:01 (roamed)
+Thu Nov 19 09:53:39 2026 user.notice hostapd[4771]: nl80211(QCA): wifi0ap0[18]: i802_sta_disassoc(02:00:00:00:a0:01)
+Thu Nov 19 09:53:39 2026 user.info hostapd[4771]: wifi1ap2: STA 02:00:00:00:a0:01 WPA: UBNT_ROAM received: STA roamed to peer AP 02:00:00:00:00:02
+Thu Nov 19 09:53:39 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: wifi0ap0: immediate disassoc for 02:00:00:00:a0:01 (roamed)
+Thu Nov 19 09:53:39 2026 user.notice hostapd[4771]: nl80211(QCA): wifi0ap0[18]: i802_sta_disassoc(02:00:00:00:a0:01)
+Thu Nov 19 09:53:39 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 IEEE 802.11: disassociated
+Thu Nov 19 09:53:39 2026 user.notice hostapd[4771]: wifi0ap0: AP-STA-DISCONNECTED 02:00:00:00:a0:01
+Thu Nov 19 09:53:39 2026 user.info stahtd[4761]: [STA-TRACKER].stahtd_dump_event(): {"op":"event","message_type":"STA_ASSOC_TRACKER","event_type":"sta_roam","mac":"02:00:00:00:a0:01","vap":"wifi0ap0","assoc_status":"0","event_id": "2","avg_rssi": "-57"}
+Thu Nov 19 09:53:39 2026 kern.info kernel: wlan: [4771:I:ANY] ieee80211_ucfg_setmlme: No peer found with mac 02:00:00:00:a0:01
+Thu Nov 19 09:53:39 2026 user.info wevent[4758]: wevent.ubnt_custom_event(): EVENT_STA_LEAVE wifi0ap0: 02:00:00:00:a0:01 / 3
+Thu Nov 19 09:53:56 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: UBNT_ROAM received: STA roamed to peer AP 02:00:00:00:00:04
+Thu Nov 19 09:53:56 2026 user.info hostapd[4771]: wifi1ap2: STA 02:00:00:00:a0:01 WPA: UBNT_ROAM received: STA roamed to peer AP 02:00:00:00:00:04
+Thu Nov 19 09:56:53 2026 user.info hostapd[4771]: wifi0ap0: STA 02:00:00:00:a0:01 WPA: UBNT_ROAM received: STA roamed to peer AP 02:00:00:00:00:02
+Thu Nov 19 09:56:53 2026 user.info hostapd[4771]: wifi1ap2: STA 02:00:00:00:a0:01 WPA: UBNT_ROAM received: STA roamed to peer AP 02:00:00:00:00:02
+Thu Nov 19 10:05:28 2026 kern.info kernel: wlan: [0:I:ANY] [UNSPECIFIED] vap-0(wifi1ap2): [02:00:00:00:a0:01]recv auth frame with algorithm 2 seq 1 rssi:26 minrssi:0
+Thu Nov 19 10:05:28 2026 kern.info kernel: wlan: [0:I:ANY] [UNSPECIFIED] vap-0(wifi1ap2): [02:00:00:00:a0:01]recv auth frame with algorithm 2 seq 1 rssi:28 minrssi:0
+Thu Nov 19 10:05:28 2026 kern.err kernel: wlan: [0:E:QDF] ieee80211_recv_asreq: WARN: Assoc req for HT Node <02:00:00:00:a0:01> only 15 RX MCS Rates supported.
+Thu Nov 19 10:05:28 2026 kern.info kernel: wlan: [0:I:ANY] [UNSPECIFIED] vap-0(wifi1ap2): [02:00:00:00:a0:01]station associated at aid 13: short preamble, long slot time, QoSHE40 cap 0x1111
+Thu Nov 19 10:05:28 2026 user.info hostapd[4771]: wifi1ap2: STA 02:00:00:00:a0:01 IEEE 802.11: associated (aid 13)
+Thu Nov 19 10:05:28 2026 user.notice hostapd[4771]: wifi1ap2: AP-STA-CONNECTED 02:00:00:00:a0:01
+Thu Nov 19 10:05:28 2026 user.info hostapd[4771]: wifi1ap2: STA 02:00:00:00:a0:01 WPA: wifi1ap2: UBNT_ROAM: STA=02:00:00:00:a0:01 associated_ap=02:00:00:00:00:05, broadcasting roam=1
+Thu Nov 19 10:05:28 2026 user.info hostapd[4771]: wifi1ap2: STA 02:00:00:00:a0:01 WPA: authorized
+Thu Nov 19 10:05:28 2026 user.info stahtd[4761]: [STA-TRACKER].stahtd_dump_event(): {"op":"event","message_type":"STA_ASSOC_TRACKER","event_type":"association","mac":"02:00:00:00:a0:01","vap":"wifi1ap2","assoc_status":"0","event_id": "1","assoc_delta": "10000","auth_utc": "1795111528.351810","auth_algo": "ft","auth_rssi": "-68"}
+Thu Nov 19 10:05:28 2026 user.info wevent[4758]: wevent.ubnt_custom_event(): EVENT_STA_JOIN wifi1ap2: 02:00:00:00:a0:01 / 13
+Thu Nov 19 10:05:29 2026 user.info wevent[4758]: wevent.ubnt_custom_event(): EVENT_STA_IP wifi1ap2: 02:00:00:00:a0:01 / 192.0.2.13
+Thu Nov 19 10:05:43 2026 user.info stahtd[4761]: [STA-TRACKER].stahtd_dump_event(): {"op":"event","message_type":"STA_ASSOC_TRACKER","event_type":"soft failure","mac":"02:00:00:00:a0:01","vap":"wifi1ap2","assoc_status":"0","ip_assign_type": "roamed","wpa_auth_delta": "30000","assoc_delta": "10000","auth_delta": "0","event_id": "2","auth_ts": "55767.000000","auth_utc": "1795111528.351810","avg_rssi": "-69","auth_rssi": "-68","auth_algo": "ft"}
+Thu Nov 19 10:11:43 2026 kern.info kernel: wlan: [0:I:ANY] [UNSPECIFIED] vap-0(wifi1ap2):BTM: STA 02:00:00:00:a0:01 RSSI: -76, candidates: 6, error: 0, flags: ALLOW (0x1)
+Thu Nov 19 10:12:04 2026 kern.info kernel: wlan: [0:I:ANY] [UNSPECIFIED] vap-0(wifi1ap2):BTM: STA 02:00:00:00:a0:01 RSSI: -75, candidates: 6, error: 0, flags: ALLOW (0x1)
+Thu Nov 19 10:12:08 2026 kern.info kernel: wlan: [0:I:ANY] [UNSPECIFIED] vap-0(wifi1ap2):BTM: Received response from [02:00:00:00:a0:01](len = 95): dialog_token 1, status 6, delay 0, bssid n/a, cancel 0
+Thu Nov 19 10:15:25 2026 kern.info kernel: wlan: [0:I:ANY] [UNSPECIFIED] vap-0(wifi1ap2):BTM: STA 02:00:00:00:a0:01 RSSI: -78, candidates: 6, error: 0, flags: ALLOW (0x1)
+Thu Nov 19 10:15:25 2026 kern.info kernel: wlan: [0:I:ANY] [UNSPECIFIED] vap-0(wifi1ap2):BTM: Received response from [02:00:00:00:a0:01](len = 95): dialog_token 1, status 6, delay 0, bssid n/a, cancel 0
+Thu Nov 19 10:15:26 2026 kern.info kernel: wlan: [0:I:ANY] [UNSPECIFIED] vap-0(wifi1ap2):BTM: STA 02:00:00:00:a0:01 RSSI: -77, candidates: 6, error: 0, flags: ALLOW (0x1)
+Thu Nov 19 10:15:26 2026 kern.info kernel: wlan: [0:I:ANY] [UNSPECIFIED] vap-0(wifi1ap2):BTM: Received response from [02:00:00:00:a0:01](len = 5): dialog_token 1, status 1, delay 0, bssid n/a, cancel 0

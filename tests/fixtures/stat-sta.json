@@ -1,0 +1,83 @@
+{
+ "data": [
+  {
+   "ap_mac": "02:00:00:00:00:06",
+   "assoc_time": 1795058574,
+   "bssid": "02:00:00:00:00:04",
+   "channel": 157,
+   "essid": "ExampleLAN",
+   "hostname": "iPhone",
+   "ip": "192.0.2.217",
+   "is_11r": true,
+   "is_wired": false,
+   "last_seen": 1795143691,
+   "latest_assoc_time": 1795142981,
+   "mac": "02:00:00:00:a0:04",
+   "name": null,
+   "radio": "na",
+   "satisfaction": 100,
+   "signal": -66,
+   "wifi_tx_retries_percentage": 10.7
+  },
+  {
+   "ap_mac": "02:00:00:00:00:0c",
+   "assoc_time": 1795143230,
+   "bssid": "02:00:00:00:00:02",
+   "channel": 149,
+   "essid": "ExampleLAN",
+   "hostname": "iPhone",
+   "ip": "192.0.2.13",
+   "is_11r": false,
+   "is_wired": false,
+   "last_seen": 1795143711,
+   "latest_assoc_time": 1795143230,
+   "mac": "02:00:00:00:a0:01",
+   "name": "Alex iPhone",
+   "radio": "na",
+   "satisfaction": 100,
+   "signal": -62,
+   "wifi_tx_retries_percentage": 14.1
+  },
+  {
+   "ap_mac": "02:00:00:00:00:0c",
+   "assoc_time": 1795120505,
+   "bssid": "02:00:00:00:00:02",
+   "channel": 149,
+   "essid": "ExampleLAN",
+   "hostname": "Watch",
+   "ip": "192.0.2.156",
+   "is_11r": true,
+   "is_wired": false,
+   "last_seen": 1795143711,
+   "latest_assoc_time": 1795135206,
+   "mac": "02:00:00:00:a0:03",
+   "name": "Alex Watch",
+   "radio": "na",
+   "satisfaction": 95,
+   "signal": -70,
+   "wifi_tx_retries_percentage": 0.0
+  },
+  {
+   "ap_mac": "02:00:00:00:00:0c",
+   "assoc_time": 1795137524,
+   "bssid": "02:00:00:00:00:02",
+   "channel": 149,
+   "essid": "ExampleLAN",
+   "hostname": "iPhone",
+   "ip": "192.0.2.214",
+   "is_11r": true,
+   "is_wired": false,
+   "last_seen": 1795143711,
+   "latest_assoc_time": 1795142879,
+   "mac": "02:00:00:00:a0:02",
+   "name": "Sam iPhone",
+   "radio": "na",
+   "satisfaction": 99,
+   "signal": -63,
+   "wifi_tx_retries_percentage": 6.5
+  }
+ ],
+ "meta": {
+  "rc": "ok"
+ }
+}

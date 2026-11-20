@@ -87,8 +87,8 @@ Fields named `x_*`, `*pass*`, `*psk*`, `*secret*`, `*token*`, `*authkey*` and `*
 
 | # | Principle | Here |
 |---|---|---|
-| 1 | Token-efficient output | TOON tables on stdout; `--json` gives the same data |
-| 2 | Minimal schemas | 4 to 9 columns; `--fields` adds columns that exist in the rows |
+| 1 | Token-efficient output | TOON on stdout, checked in CI with the official `@toon-format/cli` decoder; `--json` gives the same data |
+| 2 | Minimal schemas | 4 to 9 columns; `--fields` adds columns that exist in the rows and warns on a name that matches none |
 | 3 | Truncation | Row caps with `more: N rows hidden. Add --full.` |
 | 4 | Pre-computed aggregates | `summary:` (roams, FT, drops, BTM accept/reject, worst RSSI), drops by band/client/AP/hour |
 | 5 | Definitive empty states | `timeline: 0 events for X in 12:00-12:10. controller=ok ap_logs=4/4 ...` |
@@ -111,12 +111,12 @@ Samples below come from the synthetic test fixtures (made-up names, `02:...` MAC
 ```
 bin: ~/.local/bin/unifi-axi
 description: Wi-Fi client and AP diagnosis for a UniFi Network site (read-only except set-power --confirm)
-controller: https://192.0.2.1  site=default  tls=pinned
-aps: 4 of 4 online  fw=8.8.14.20179 (all)  wifi_clients=41  as_of=19:02:51
+controller: "https://192.0.2.1  site=default  tls=pinned"
+aps: "4 of 4 online  fw=8.8.14.20179 (all)  wifi_clients=41  as_of=19:02:51"
 drops: 3 in 24h (all wireless clients; reconnect within 180 s)  per_day=3.0
 help[2]:
-  unifi-axi client "<name|mac>" --since 10m
-  unifi-axi --help  (aps, clients, drops, verify, kickout, cert, set-power)
+  - "unifi-axi client \"<name|mac>\" --since 10m"
+  - "unifi-axi --help  (aps, clients, drops, verify, kickout, cert, set-power)"
 ```
 
 ### `client <name|mac> [--since 10m] [--until T] [--all-aps] [--no-ssh] [--full] [--save]`
@@ -124,18 +124,18 @@ help[2]:
 Name, hostname or MAC in any format. `Alex's iPhone` matches `Alex iPhone`. One name on several MACs (private-address rotation) follows the live ones. Times: `10m`, `2h`, `3d`, `HH:MM`, `YYYY-MM-DD HH:MM`.
 
 ```
-client: Alex iPhone  mac=02:00:00:00:a0:01  ip=192.0.2.13  match=tokens("alex iphone")
-window: 2026-11-19 09:50:00-10:12:00 PST (22m)
+client: "Alex iPhone  mac=02:00:00:00:a0:01  ip=192.0.2.13  match=tokens(\"alex iphone\")"
+window: "2026-11-19 09:50:00-10:12:00 PST (22m)"
 sources: controller=ok(7 client events of 14; 1/1 pages)  ap_logs=4/4 chosen of 4 online  stat_sta=ok  rest_user=ok
 now: ap=AP Office  band=5  ch=149  signal=-62  last_seen=60s  retries=14.1%  satisfaction=100  11r_ctl=no  (stat/sta)
-summary: roams=6 (ft=5 full_sae=1 unknown=0)  ft_fail=1  ctl_repeat=1  drops=0  btm_req=14 accepted=2 rejected=3  worst_rssi=-92 (AP Patio 09:56:53)
+summary: "roams=6 (ft=5 full_sae=1 unknown=0)  ft_fail=1  ctl_repeat=1  drops=0  btm_req=14 accepted=2 rejected=3  worst_rssi=-92 (AP Patio 09:56:53)"
 conflict: none
 timeline[18]{t,src,ap,band,event,rssi,detail}:
-  09:51:44,ctl+ap,AP Shop,5,roam ft,-72,from AP Office (-80); ctl +20s
-  09:52:02,ap,AP Den,2.4,ft attempt,UNKNOWN,"FT auth seen, no AP-STA-CONNECTED; did not acknowledge association response"
-  09:52:03,ctl+ap,AP Den,2.4,join full_sae,-49,from AP Shop (-77)
-  09:52:07,ap,AP Office,5,disconnect,UNKNOWN,kicked out: Excessive Retries; client joined AP Den at 09:52:03
-  09:53:39,ctl+ap,AP Office,5,roam ft,-47,from AP Den (-57)
+  "09:51:44",ctl+ap,AP Shop,5,roam ft,-72,from AP Office (-80); ctl +20s
+  "09:52:02",ap,AP Den,2.4,ft attempt,UNKNOWN,"FT auth seen, no AP-STA-CONNECTED; did not acknowledge association response"
+  "09:52:03",ctl+ap,AP Den,2.4,join full_sae,-49,from AP Shop (-77)
+  "09:52:07",ap,AP Office,5,disconnect,UNKNOWN,"kicked out: Excessive Retries; client joined AP Den at 09:52:03"
+  "09:53:39",ctl+ap,AP Office,5,roam ft,-47,from AP Den (-57)
   ...
 more: 4 rows hidden (4 left). Add --full.
 ```
@@ -149,7 +149,7 @@ more: 4 rows hidden (4 left). Add --full.
 ### `aps [<ap>]`
 
 ```
-aps: 4 of 4 online  fw=8.8.14.20179 (all)  wifi_clients=41  as_of=19:02:51
+aps: "4 of 4 online  fw=8.8.14.20179 (all)  wifi_clients=41  as_of=19:02:51"
 radios[11]{ap,band,ch_cfg,ch_live,width,pwr_cfg,pwr_live,util,sta}:
   AP Office,5,149,149,40,20,20,4,7
   AP Patio,5,157,157,40,auto,25,15,1
@@ -162,10 +162,10 @@ mismatch: none
 ### `clients [--grep text] [--full]`
 
 ```
-clients: 4 wireless (4 total in stat/sta)
+summary: 4 wireless (4 total in stat/sta)
 clients[4]{name,mac,ap,band,signal}:
-  Alex Watch,02:00:00:00:a0:03,AP Office,5,-70
-  Sam iPhone,02:00:00:00:a0:02,AP Office,5,-63
+  Alex Watch,"02:00:00:00:a0:03",AP Office,5,-70
+  Sam iPhone,"02:00:00:00:a0:02",AP Office,5,-63
   ...
 ```
 
@@ -180,7 +180,7 @@ by_band[2]{band,drops,per_h}:
   5,2,0.08
   2.4,1,0.04
 by_client[3]{client,drops,worst_gap_s,last}:
-  Sam iPhone,1,9,08:00:00
+  Sam iPhone,1,9,"08:00:00"
   ...
 ```
 
@@ -206,14 +206,14 @@ FT rule: every enabled WLAN must run the FT suites its own flags turn on (`fast_
 Read-only. See [Qualcomm firmware kickout](#qualcomm-firmware-kickout).
 
 ```
-kickout: 2 dmesg kicks, 5 'Excessive Retries' log lines on 4/4 APs read
+kickout: "2 dmesg kicks, 5 'Excessive Retries' log lines on 4/4 APs read"
 aps[4]{ap,dmesg_kicks,log_retries,log_from,uptime}:
-  AP Den,0,1,11/18 17:20,1d0h
-  AP Office,2,4,11/18 17:20,1d0h
+  AP Den,0,1,"11/18 17:20",1d0h
+  AP Office,2,4,"11/18 17:20",1d0h
   ...
 top_clients[2]{client,mac,kicks,aps}:
-  Alex iPhone,02:00:00:00:a0:01,4,AP Den/AP Office
-  Sam iPhone,02:00:00:00:a0:02,1,AP Office
+  Alex iPhone,"02:00:00:00:a0:01",4,AP Den/AP Office
+  Sam iPhone,"02:00:00:00:a0:02",1,AP Office
 help: unifi-axi client <mac> --since 24h  (kick -> disconnect -> drop rows)
 ```
 
@@ -222,23 +222,23 @@ help: unifi-axi client <mac> --since 24h  (kick -> disconnect -> drop rows)
 ### `cert`
 
 ```
-cert: https://192.0.2.1  chain_verified=no (self-signed or unknown CA)
+cert: "https://192.0.2.1  chain_verified=no (self-signed or unknown CA)"
 subject: CN=unifi.example
 issuer: CN=Example CA
 valid: 2025-01-01..2035-01-01 UTC (expires in 2964 days)
-sha256: 9F:...:4C
+sha256: "9F:...:4C"
 pin: not pinned
 help[3]:
-  export UNIFI_CERT_SHA256=9F:...:4C
-  or in config.toml: cert_sha256 = "9F:...:4C"
-  check first: openssl s_client -connect 192.0.2.1:443 </dev/null 2>/dev/null | openssl x509 -noout -fingerprint -sha256
+  - "export UNIFI_CERT_SHA256=9F:...:4C"
+  - "or in config.toml: cert_sha256 = \"9F:...:4C\""
+  - "check first: openssl s_client -connect 192.0.2.1:443 </dev/null 2>/dev/null | openssl x509 -noout -fingerprint -sha256"
 ```
 
 ### `set-power <ap> <band> <dBm|auto> [--tx-power N] [--confirm]`
 
 ```
 set-power: AP Office 5 GHz  20 -> 18 dBm  PREVIEW (nothing sent)
-radio: mode=custom ch=149 width=40 sta=7  body: only na tx_power_mode/tx_power change; other radios and fields sent as read
+radio: "mode=custom ch=149 width=40 sta=7  body: only na tx_power_mode/tx_power change; other radios and fields sent as read"
 warn: do not apply during a live call or walk test; the change can drop clients on this radio
 clients: 7 on AP Office 5 GHz now
 help: unifi-axi set-power 'AP Office' 5 18 --confirm

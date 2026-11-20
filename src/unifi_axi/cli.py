@@ -216,10 +216,19 @@ def usage_lines(parser: Parser, argv: list[str], message: str) -> list[tuple[str
                     ("help", f"valid flags for {where}: {flags} (--help always allowed)")]
         return [("error", f"unexpected argument {extras[0]!r} for {where}"),
                 ("help", f"unifi-axi {cmd + ' ' if cmd else ''}--help")]
-    if "invalid choice" in message and cmd is None:
+    if "invalid choice" in message and (cmd is None or "<command>" in message):
         bad = next((a for a in argv if not a.startswith("-")), "?")
+        before = argv[:argv.index(bad)] if bad in argv else []
+        stray = [a.split("=", 1)[0] for a in before if a.startswith("-") and a.split("=", 1)[0] not in GLOBAL_FLAGS]
+        if stray:
+            return [("error", f"unknown flag {stray[0]} (before the command)"),
+                    ("help", f"global flags: {', '.join(sorted(GLOBAL_FLAGS))}; command flags go after the command")]
         return [("error", f"unknown command {bad!r}"), ("help", f"commands: {', '.join(COMMANDS)}")]
     return [("error", message), ("help", f"unifi-axi {cmd + ' ' if cmd else ''}--help")]
+
+
+GLOBAL_FLAGS = {"-h", "--help", "-v", "-V", "--version", "--json", "--fields", "--api-key-file",
+                "--insecure", "--cert-sha256"}
 
 
 def emit(doc: Doc, as_json: bool) -> None:
@@ -271,5 +280,10 @@ def main(argv: list[str] | None = None) -> int:
         doc.kv("error", f"internal: {type(exc).__name__} in {cmd or 'home'}; output above may be partial")
         doc.kv("help", "re-run with the same arguments; report it if it repeats")
         code = 1
+    unknown = doc.unknown_fields()
+    if unknown:
+        avail = doc.available_fields()
+        doc.kv("warn", f"--fields {','.join(unknown)} matched no column"
+               + (f"; available: {','.join(avail)}" if avail else "; this output has no table"))
     emit(doc, args.json)
     return code

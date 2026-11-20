@@ -8,20 +8,31 @@ prints it once, as TOON (default) or JSON (--json). Errors are Doc lines too.
 from __future__ import annotations
 
 import json
+import re
 from typing import Any
+
+_NUMERIC = re.compile(r"^-?(?:0|[1-9]\d*)(?:\.\d+)?(?:[eE][+-]?\d+)?$|^0\d+$")
+_NEEDS_QUOTE = set(':,"\\[]{}#\n\r\t')
 
 
 def toon_scalar(value: Any) -> str:
+    """One TOON primitive. Strings are quoted when the TOON spec (section 7.2)
+    requires it: empty, padded, a literal (true/false/null), numeric-looking,
+    a leading '-', or containing a colon, quote, backslash, bracket, brace,
+    delimiter or control character."""
     if value is None:
-        return ""
+        return "null"
     if isinstance(value, bool):
         return "yes" if value else "no"
+    if isinstance(value, (int, float)):
+        return str(value)
     text = str(value)
-    if text and not any(c in text for c in ',"\n\r\t') and text == text.strip():
-        return text
-    if text == "":
-        return ""
-    return '"' + text.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n") + '"'
+    if (text == "" or text != text.strip() or text in ("true", "false", "null")
+            or _NUMERIC.match(text) or text.startswith("-")
+            or any(c in _NEEDS_QUOTE for c in text)):
+        return '"' + (text.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
+                      .replace("\r", "\\r").replace("\t", "\\t")) + '"'
+    return text
 
 
 class Doc:
@@ -30,12 +41,17 @@ class Doc:
     def __init__(self, fields: list[str] | None = None):
         self.blocks: list[tuple] = []
         self.fields = fields or []
+        self.fields_used: set[str] = set()
+        self.fields_seen: set[str] = set()
 
     def kv(self, key: str, text: str) -> None:
         self.blocks.append(("kv", key, text))
 
     def table(self, name: str, cols: list[str], rows: list[dict]) -> None:
         extra = [f for f in self.fields if f not in cols and any(f in r for r in rows)]
+        self.fields_used.update(f for f in self.fields if f in cols or f in extra)
+        for r in rows:
+            self.fields_seen.update(r)
         self.blocks.append(("table", name, cols + extra, rows))
 
     def items(self, name: str, values: list[str]) -> None:
@@ -46,16 +62,40 @@ class Doc:
         JSON gives every group of the same name as one list of objects."""
         self.blocks.append(("group", name, sub))
 
+    def unknown_fields(self) -> list[str]:
+        """--fields names that matched no column of any table in this doc."""
+        sub = [b[2] for b in self.blocks if b[0] == "group"]
+        used = self.fields_used.union(*(d.fields_used for d in sub))
+        return [f for f in self.fields if f not in used]
+
+    def available_fields(self) -> list[str]:
+        sub = [b[2] for b in self.blocks if b[0] == "group"]
+        return sorted(self.fields_seen.union(*(d.fields_seen for d in sub)))
+
     def toon(self) -> str:
         lines = []
+        groups: dict[str, list[Doc]] = {}
         for block in self.blocks:
             if block[0] == "group":
-                lines.append(block[2].toon().rstrip("\n"))
+                groups.setdefault(block[1], []).append(block[2])
+        done: set[str] = set()
+        for block in self.blocks:
+            if block[0] == "group":
+                # every group of one name is one TOON list of objects, at its first position
+                name = block[1]
+                if name in done:
+                    continue
+                done.add(name)
+                lines.append(f"{name}[{len(groups[name])}]:")
+                for sub in groups[name]:
+                    sub_lines = sub.toon().rstrip("\n").split("\n")
+                    lines.append("  - " + sub_lines[0])
+                    lines.extend("    " + ln for ln in sub_lines[1:])
             elif block[0] == "kv":
-                lines.append(f"{block[1]}: {block[2]}")
+                lines.append(f"{block[1]}: {toon_scalar(block[2])}")
             elif block[0] == "list":
                 lines.append(f"{block[1]}[{len(block[2])}]:")
-                lines.extend(f"  {v}" for v in block[2])
+                lines.extend(f"  - {toon_scalar(v)}" for v in block[2])
             else:
                 _, name, cols, rows = block
                 lines.append(f"{name}[{len(rows)}]{{{','.join(cols)}}}:")

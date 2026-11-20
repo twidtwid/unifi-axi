@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import shutil
 import ssl
 import subprocess
 import sys
@@ -26,6 +27,7 @@ from helpers import (
     FakeSSH,
     make_env,
     run,
+    unquote_toon,
 )
 from unifi_axi import _version, api, cli, config
 from unifi_axi.commands import cert
@@ -160,7 +162,7 @@ class PinTests(unittest.TestCase):
                 with contextlib.redirect_stdout(out):
                     code = cli.main(["aps"])
         self.assertEqual(code, 1, out.getvalue())
-        self.assertIn("error: stat/device failed: certificate pin mismatch", out.getvalue())
+        self.assertIn("error: stat/device failed: certificate pin mismatch", unquote_toon(out.getvalue()))
         self.assertEqual(len(FakeConn.instances), 1)  # a pin failure is not retried
         self.assertEqual(FakeConn.instances[0].requests, [])
 
@@ -198,7 +200,7 @@ class CertCommandTests(unittest.TestCase):
             with mock.patch.dict(os.environ, env, clear=True), contextlib.redirect_stdout(out), \
                     mock.patch("unifi_axi.clock.now_ts", lambda: NOW):
                 code = cli.main(["cert"])
-        return code, out.getvalue()
+        return code, unquote_toon(out.getvalue())
 
     def test_prints_subject_issuer_expiry_fingerprint_and_pin_line_without_a_request(self):
         code, out = self.run_cert()
@@ -353,3 +355,48 @@ class CliContractTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ReviewFixTests(unittest.TestCase):
+    """Fixes from the catalog source review of d482f83."""
+
+    def test_strings_with_colons_or_number_shapes_are_quoted(self):
+        from unifi_axi.toon import toon_scalar
+        self.assertEqual(toon_scalar("09:51:44"), '"09:51:44"')
+        self.assertEqual(toon_scalar("5"), '"5"')
+        self.assertEqual(toon_scalar("-70 dBm"), '"-70 dBm"')
+        self.assertEqual(toon_scalar(-70), "-70")
+        self.assertEqual(toon_scalar("AP Office"), "AP Office")
+
+    def test_lists_use_dash_items_and_repeated_groups_are_one_list(self):
+        from unifi_axi.toon import Doc
+        doc = Doc()
+        doc.items("help", ["unifi-axi aps"])
+        for name in ("AP Den", "AP Office"):
+            sub = Doc()
+            sub.kv("verify", name)
+            doc.group("aps", sub)
+        self.assertEqual(doc.toon(), "help[1]:\n  - unifi-axi aps\naps[2]:\n  - verify: AP Den\n  - verify: AP Office\n")
+
+    def test_unknown_fields_name_is_reported(self):
+        code, out = run(["aps", "--fields", "nosuch"])
+        self.assertEqual(code, 0, out)
+        self.assertIn("warn: --fields nosuch matched no column; available:", out)
+
+    def test_unknown_flag_before_the_command_is_named(self):
+        code, out = run(["--sin", "1h", "drops"])
+        self.assertEqual(code, 2, out)
+        self.assertIn("error: unknown flag --sin (before the command)", out)
+
+    @unittest.skipUnless(shutil.which("npx") and os.environ.get("UNIFI_AXI_TOON_STRICT"),
+                         "set UNIFI_AXI_TOON_STRICT=1 with npx on PATH to run the official decoder")
+    def test_every_command_output_decodes_with_the_official_toon_cli(self):
+        cases = [[], ["aps"], ["clients"], ["drops", "--since", "24h"], ["kickout"], ["verify", "--all"],
+                 ["client", "Alex iPhone", "--since", "2026-11-19 09:50", "--until", "2026-11-19 10:12"],
+                 ["set-power", "AP Office", "5", "19"], ["aps", "--bogus"]]
+        for argv in cases:
+            with self.subTest(argv=argv):
+                _, out = run(argv, raw_output=True)
+                res = subprocess.run(["npx", "-y", "-q", "@toon-format/cli@4.4.0", "--decode"], input=out,
+                                     capture_output=True, text=True, timeout=120)
+                self.assertEqual(res.returncode, 0, res.stderr + out)

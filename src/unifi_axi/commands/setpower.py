@@ -365,6 +365,7 @@ def cmd_set_power(args, doc: Doc) -> int:
     devices, err = api.legacy_list("stat/device")
     if err:
         doc.kv("error", f"stat/device failed: {err}; nothing sent")
+        doc.kv("help", "check UNIFI_URL and the API key; unifi-axi cert shows the controller certificate")
         return 1
     site = build_site(devices)
     ap, code = pick_ap(doc, site, args.ap, "set-power", f"{args.band} {args.dbm}")

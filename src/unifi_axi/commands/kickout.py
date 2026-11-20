@@ -34,6 +34,7 @@ def cmd_kickout(args, doc: Doc) -> int:
     devices, err = api.legacy_list("stat/device")
     if err:
         doc.kv("error", f"stat/device failed: {err}")
+        doc.kv("help", "check UNIFI_URL and the API key; unifi-axi cert shows the controller certificate")
         return 1
     site = build_site(devices)
     targets = site.aps

@@ -266,7 +266,7 @@ class VerifyTests(unittest.TestCase):
         self.assertTrue(all("result" in a and ("radios" in a or "radios_ctl" in a) for a in data["aps"]))
         self.assertIn("overall", data)
         code2, text = run(["verify", "--all"], ssh_fake=FakeSSH({OFFICE_IP: fixture_text("verify-office.txt")}))
-        self.assertEqual(len([line for line in text.splitlines() if line.startswith("verify: ")]), 4, text)
+        self.assertEqual(len([line for line in text.splitlines() if line.strip().startswith("verify: ")]), 4, text)
         self.assertEqual(code, code2)
         doc = toon.Doc()
         doc.kv("a", "1")
@@ -542,7 +542,7 @@ class ApLogTests(unittest.TestCase):
 
     def test_ft_auth_without_connect_is_ft_attempt(self):
         code, out = self.client([f"{stamp(T10 + 60)} {KERN}vap-0(wifi1ap2): [{ALEX}]recv auth frame with algorithm 2 seq 1 rssi:30 minrssi:0"])
-        self.assertIn('10:01:00,ap,AP Office,5,ft attempt,UNKNOWN,"FT auth seen, no AP-STA-CONNECTED"', out)
+        self.assertIn('10:01:00,ap,AP Office,5,ft attempt,UNKNOWN,FT auth seen, no AP-STA-CONNECTED', out)
         self.assertIn("ft_fail=1", out)
 
     def test_auth_reject_line_is_auth_rejected(self):

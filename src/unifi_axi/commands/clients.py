@@ -14,6 +14,7 @@ def cmd_clients(args, doc: Doc) -> int:
     sta, err = api.legacy_list("stat/sta")
     if err:
         doc.kv("error", f"stat/sta failed: {err}")
+        doc.kv("help", "check UNIFI_URL and the API key; unifi-axi cert shows the controller certificate")
         return 1
     devices, _ = api.legacy_list("stat/device")
     site = build_site(devices or [])
@@ -23,7 +24,7 @@ def cmd_clients(args, doc: Doc) -> int:
         wireless = [s for s in wireless if g in f"{s.get('name') or ''} {s.get('hostname') or ''} {s.get('mac') or ''}".lower()]
     wireless.sort(key=lambda s: s.get("signal") if isinstance(s.get("signal"), int) else 0)
     scope = f" matching {args.grep!r}" if args.grep else ""
-    doc.kv("clients", f"{len(wireless)} wireless{scope} ({len(sta)} total in stat/sta)")
+    doc.kv("summary", f"{len(wireless)} wireless{scope} ({len(sta)} total in stat/sta)")
     if not wireless:
         doc.kv("help", "unifi-axi clients  (no --grep) or unifi-axi drops --since 24h")
         return 0

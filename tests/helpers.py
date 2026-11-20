@@ -182,9 +182,21 @@ def make_env(state_dir: str, **extra: str) -> dict[str, str]:
     return env
 
 
+_QUOTED = re.compile(r'"((?:[^"\\]|\\.)*)"')
+
+
+def unquote_toon(text: str) -> str:
+    """Readable form for substring asserts: drop TOON string quotes and `- ` list markers.
+    Strict TOON syntax is checked separately (test_toon_strict)."""
+    def unq(m):
+        return (m.group(1).replace('\\"', '"').replace("\\n", "\n").replace("\\\\", "\\"))
+    lines = [re.sub(r"^  - ", "  ", ln) for ln in text.split("\n")]
+    return _QUOTED.sub(unq, "\n".join(lines))
+
+
 def run(argv: list[str], controller: FakeController | None = None, ssh_fake: FakeSSH | None = None,
         state_dir: Path | None = None, extra: list | None = None, env: dict[str, str] | None = None
-        ) -> tuple[int, str]:
+        , raw_output: bool = False) -> tuple[int, str]:
     controller = controller or FakeController()
     ssh_fake = ssh_fake or FakeSSH.fixtures()
     out = io.StringIO()
@@ -204,4 +216,5 @@ def run(argv: list[str], controller: FakeController | None = None, ssh_fake: Fak
             stack.enter_context(p)
         stack.enter_context(contextlib.redirect_stdout(out))
         code = cli.main(argv)
-    return code, out.getvalue()
+    raw = out.getvalue()
+    return code, (raw if raw_output or "--json" in argv else unquote_toon(raw))
